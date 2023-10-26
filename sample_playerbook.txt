@@ -1,0 +1,29 @@
+1 //First Line Displays Number of Entries
+John //First Name
+Smith //Last Name
+2005 //Year of Birth
+paid //paid/unpaid
+U7 //Category
+
+
+4
+Arnold 
+Smith
+2014
+paid
+U10
+Beth
+Anderson
+2010
+unpaid
+U14
+Casey
+Jones
+2012
+unpaid
+U12
+John
+Smith
+2015
+paid
+U8

@@ -1,0 +1,19 @@
+CS142 Project 2 April 2022
+The Program has 3 main parts : The PlayerBook, PlayerEntry, and PlayerList.
+Within each part there is a cpp and h file containing the functions each require, except for PlayerEntry,
+which has only an h file.
+
+PlayerBook
+-----------
+Handles interaction with the user. Has minimal functions and variables in its header file. 
+Runs the display and command functions, as well as the run function.
+
+PlayerEntry
+-----------
+Defines the Class PlayerEntry that will be used to store the data of the players. 
+Has constructors and overloads operations needed by the class.
+
+PlayerList
+----------
+Where the brunt of functions are. Defines the maps for both the entries and search results,
+as well as all of their functions and variables.

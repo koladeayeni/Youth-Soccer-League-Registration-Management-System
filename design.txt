@@ -1,0 +1,79 @@
+For this design document, functions and their purpose will be listed under what file the are in.
+
+PlayerBook.cpp
+--------------
+run - runs the program. Decides what view the user is in and stops when bool finished returns true.
+
+display_search_menu - designs and sets up the search view for the user. Displays search command options
+and error text. Also displays current season and result number.
+
+display_menu - designs and sets up the main view for the user. Displays main command options and
+error text. Can display statistics and print players, too if command is chosen.
+
+search_execute - executes commands in the search view. Uses a switch statement to get user input. 
+
+execute - executes commands in the main view. Uses a switch statement to get user input.
+
+PlayerBook.h
+------------
+Sets up class PlayerBook and declares the functions used in PlayerBook.cpp, as well as data members
+bool printing, bool showing_stats, bool in_search_view, and string error_msg, which are all used in the cpp
+file.
+
+PlayerList.cpp
+--------------
+read_file - reads from a file using a string argument. Specifically reads entries from a file.
+Adds read entries to m_entries_.
+
+write_file - writes to a file using a string as argument. Uses the overloaded output operator to 
+write entries to file. Used in saving data.
+
+(s_)next/(s_)prev - allow for iterating through current results in maps m_entries_ and search_results_. 
+Have a circular structure (i.e. next on last result goes back to first).
+
+print_players - prints the players in the map m_entries using iterators.
+Uses overloaded output operator to do so.
+Sets current entry iterator back to first player at the end.
+
+print_search - prints the players in the map search_results_ using iterators.
+Uses overloaded output operator to do so.
+Sets current entry iterator back to first result at the end.
+
+get_U - takes an integer as argument and calculates the correct category for a player to be in.
+Returns a boolean value. If a category was found, returns true. Otherwise, returns false.
+
+search - searches for results in m_entries_ that match the string term given as argument. Determines
+what is being searched for using char type argument and a switch statement.
+
+edit - edits the current player being displayed in the search view. Takes char option and uses a switch
+statement to decide what to change. String argument change tells what to change player value to.
+
+keysearch - searches for a substring in m_entries_ based on string argument. Determines
+what is being searched for using char type argument and a switch statement.
+
+PlayerList.h
+------------
+Declares all of the functions used in PlayerList.cpp. Also creates two maps, m_entries_ and search_results,
+which both contain pairs of type <string,PlayerEntry>. Has some one line get functions that get sizes of
+the maps and an empty check one liner. Creates variables int current_season, int number_paid, and int 
+result_number which are used in functions in PlayerList.cpp.
+
+PlayerEntry.h
+-------------
+Creates the PlayerEntry Class with constructors and variables string fname, string lname, string age,
+string paid, and string category. Using all strings for variables made development easier and stoi could
+be used to easily convert to ints as needed for age. Also overloads input and output operators to print
+PlayerEntries. 
+
+playerbook.txt
+--------------
+Stores all of the player entries when the program is closed. Is read from and written to in order to save
+and access data.
+
+test.cpp
+--------
+Creates a PlayerBook and runs it.
+
+
+
+
